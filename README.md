@@ -1,12 +1,24 @@
 # Criando um Ebook com IAs
 
-## IAs utilizadas
+## Tecnologias utilizadas
+
+### IAs
 - Microsoft Copilot
 
 
-### Chat com Microsoft Copilot
+## Passos para a construção
 
-#### 1. Criando um título épico
+Abaixo estão os passos para a construção do ebook
+
+### 1. Criando um título épico utilizando IA
+
+O primeiro passo foi criar um título para o ebook. Após prompts com o chat Microsoft Copilot (abaixo descritos), o título criado (escolhido) foi: 
+**O Despertar do Guerreiro Java: A Arte Shinobi dos Microserviços Apache Camel**
+
+<details>
+
+<summary>Prompts e respostas</summary>
+
 **Prompt:**  
 Crie um título de um ebook sobre o tema Apache Camel, o ebook é do nicho de programação e o subnicho é Java, microserviços e o framework Apache Camel. O título deve ser épico e curto, com temática de anime (animação japonesa) de aventura. Me liste 5 variações de títulos.
 
@@ -44,9 +56,11 @@ Gostei da resposta, mas quero também incluir referência à arquitetura de micr
 
 **Resposta:**
 Aqui estão algumas variações épicas, agora incorporando a arquitetura de microserviços e mantendo a vibe de anime e Apache Camel:
-1. O Código Secreto dos Devs: A Arte Shinobi dos Microserviços Apache Camel
-2. O Despertar do Guerreiro Java: A Revolução dos Microserviços com Apache Camel
-3. A Arte Ninja dos Microserviços: Dominando Apache Camel no Campo de Batalha
-4. Apache Camel: A Jornada Shinobi na Arquitetura dos Microserviços
-5. O Samurai do Código: Microserviços e Apache Camel na Era Digital
+1. **O Código Secreto dos Devs: A Arte Shinobi dos Microserviços Apache Camel**
+2. **O Despertar do Guerreiro Java: A Revolução dos Microserviços com Apache Camel**
+3. **A Arte Ninja dos Microserviços: Dominando Apache Camel no Campo de Batalha**
+4. **Apache Camel: A Jornada Shinobi na Arquitetura dos Microserviços**
+5. **O Samurai do Código: Microserviços e Apache Camel na Era Digital**
 Cada título reforça o poder do Apache Camel no desenvolvimento de microserviços, enquanto mantém a essência heroica e aventureira dos animes! Algum desses te parece perfeito ou deseja ajustes? 🚀🔥
+
+</details>
