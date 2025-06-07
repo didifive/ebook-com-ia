@@ -1,5 +1,11 @@
 # Criando um Ebook com IAs
 
+## Objetivo do projeto
+
+Criar um ebook utilizando tecnologias de IAs para acelerar o desenvolvimento e compartilhar a experiência no desenvolvimento do ebook e do Apache Camel com Spring Boot e Java.
+
+*Esse projeto foi criado com base no desafio de projeto "Criando um Ebook com ChatGPT & MidJourney" do bootcamp [TONNIE - Java and AI in Europe] na [DIO]*
+
 ## Tecnologias utilizadas
 
 ### IAs
@@ -64,3 +70,7 @@ Aqui estão algumas variações épicas, agora incorporando a arquitetura de mic
 Cada título reforça o poder do Apache Camel no desenvolvimento de microserviços, enquanto mantém a essência heroica e aventureira dos animes! Algum desses te parece perfeito ou deseja ajustes? 🚀🔥
 
 </details>
+
+
+[DIO]: https://www.dio.me/sign-up?ref=WQ0TRWQ8E1 
+[TONNIE - Java and AI in Europe]: https://www.dio.me/bootcamp/tonnie-java-and-ai-europe?ref=WQ0TRWQ8E1
