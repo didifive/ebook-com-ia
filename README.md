@@ -44,7 +44,7 @@ Combine os dois títulos abaixo para gerar novos títulos poderosos mantendo a t
 "O Caminho do Guerreiro Java: Dominando Apache Camel"
 "Apache Camel Chronicles: O Despertar do Dev Shinobi"
 
-**Resposta:** 
+**Resposta:**  
 Aqui estão algumas combinações poderosas dos seus títulos, mantendo a temática de anime e o foco no Apache Camel:
 1. **Apache Camel Chronicles: O Caminho do Dev Samurai**
 2. **O Despertar do Guerreiro Java: A Saga Apache Camel**
@@ -60,7 +60,7 @@ Gostei da resposta, mas quero também incluir referência à arquitetura de micr
 "O Código Secreto dos Devs: A Arte Shinobi do Apache Camel"
 "O Despertar do Guerreiro Java: A Saga Apache Camel"
 
-**Resposta:**
+**Resposta:**  
 Aqui estão algumas variações épicas, agora incorporando a arquitetura de microserviços e mantendo a vibe de anime e Apache Camel:
 1. **O Código Secreto dos Devs: A Arte Shinobi dos Microserviços Apache Camel**
 2. **O Despertar do Guerreiro Java: A Revolução dos Microserviços com Apache Camel**
@@ -70,6 +70,18 @@ Aqui estão algumas variações épicas, agora incorporando a arquitetura de mic
 Cada título reforça o poder do Apache Camel no desenvolvimento de microserviços, enquanto mantém a essência heroica e aventureira dos animes! Algum desses te parece perfeito ou deseja ajustes? 🚀🔥
 
 </details>
+
+
+### 2. Arte para a capa
+
+Após escolher um título para o ebook, a próxima etapa é criar uma arte para a capa. Aqui utilizei também o chat do Microsoft Copilot para gerar.
+
+**Prompt:**   
+Crie uma imagem com personagem estilo shinobi e que esteja com uma xícara de café (para representar a linguagem de programação java), tenha um camelo (para representar o framework apache camel) e a paisagem seja de primavera (para representar o framework spring boot). A imagem deve ser estilo anime (animação japonesa) 
+
+**Resposta:**  
+![Arte Capa](artecapa.png)
+
 
 
 [DIO]: https://www.dio.me/sign-up?ref=WQ0TRWQ8E1 
