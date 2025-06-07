@@ -8,8 +8,8 @@ Criar um ebook utilizando tecnologias de IAs para acelerar o desenvolvimento e c
 
 ## Tecnologias utilizadas
 
-### IAs
-- Microsoft Copilot
+- [Microsoft Copilot Chat]
+- [Carbon]
 
 
 ## Passos para a construção
@@ -83,6 +83,248 @@ Crie uma imagem com personagem estilo shinobi e que esteja com uma xícara de ca
 ![Arte Capa](artecapa.png)
 
 
+### 3. Montar a capa
+
+Com a imagem para a capa, a próxima etapa é criar a capa do ebook em si, para isso pode-se utilizar ferramentas como Microsoft PowerPoint, LibreOffice Impress, Google Slides ou até o Canva (mesmo que não é otimizado para documentos). 
+
+Como possuo o PowerPoint eu escolhi essa ferramenta.
+
+### 4. Montar o layout do conteúdo
+
+Depois de montar a capa o próximo passo foi definir o layout do conteúdo para padronizar. Foram montados 2 layouts: 1 de capa para cada seção/capítulo para separar o conteúdo e outro para o conteúdo em si.
+
+### 5. Prompt para o conteúdo
+
+Após ter os layouts o próximo passo foi criar o conteúdo, para isso utilizei novamente o Microsoft Copilot para gerar o conteúdo de base com o prompt abaixo.
+
+<details>
+
+<summary>Prompt e resposta</summary>
+
+**Prompt**  
+Faça um texto para ebook com foco no framework Apache Camel, considerando o uso do Apache Camel 4.10 com Java 21 e Spring Boot 3.5. Demonstrando como criar 2 microserviços (A e B) que se comunicam através de um message broker.  
+  
+{REGRAS}  
+- Explicar de maneira simples considerando o público programadores estagiários e júniors
+- O texto deve compreender: os requisitos mínimos tal como ter que possuir o JDK 21, maven e docker, sobre como criar o arquivo do docker compose, criar o projeto de cada microserviço (mostrar a configuração e as dependencias básicas no pom.xml) para que o leitor possa replicar os passos
+- Trazer exemplos de códigos que contemplem os requisitos do projeto geral e de cada microserviço
+- Sempre crie um título e um subtítulo sugestivo para cada tópico
+- Considere a temática de anime (animação japonesa) de aventura
+- Considere o título do ebook "O Despertar do Guerreiro Java: A Arte Shinobi dos Microserviços Apache Camel"
+  
+{Requisitos do projeto geral}  
+- O projeto deve conter 2 microserviços e docker-compose para executar componentes externos (como o message broker)
+- Os microserviços devem utilizar as tecnologias Java 17, maven, Spring Boot 3.5 e Apache Camel 4.10
+- O message broker é ActiveMQ
+  
+{Requisitos do Microserviço A}  
+- Deve ler arquivo que fica na pasta c:/carta-recebida
+- Deve checar se na primeira linha contém a frase secreta correta
+- Deve extrair os e-mails da segunda linha (e-mails devem estar separados por ";") 
+- Deve extrair o assunto da terceira linha
+- O restante do conteúdo do arquivo representa a mensagem que será enviada ao destinatário do email extraido
+- Para cada e-mail coletado, é enviado uma mensagem ao Message Broker em uma fila "mensagems para enviar" contendo o email do destinatário, o assunto e a mensagem
+  
+{Requisitos do Microserviço B}  
+- Deve ficar escutando a fila "mensagems para enviar" para checar se tem mensagens para enviar
+- Quando receber a mensagem deve pegar as informações de e-mail, assunto e mensagem para gerar um e-mail para envio ao destinatário.
+
+
+**Resposta** 
+
+A seguir, segue um capítulo do ebook "O Despertar do Guerreiro Java: A Arte Shinobi dos Microserviços Apache Camel", repleto de aventura e simplicidade para que você, guerreiro em formação, possa dominar a arte dos microserviços com Apache Camel 4.10, Java (JDK 21) e Spring Boot 3.5. Cada tópico apresenta um título e subtítulo sugestivo para guiar sua jornada.
+
+*Capítulo 1: Preparando o Terreno da Batalha*
+*Subtítulo: Requisitos Básicos para Ingressar na Missão Shinobi*
+
+Antes de iniciar sua aventura, é imprescindível que seu arsenal esteja completo. Certifique-se de ter instalados os seguintes itens:
+- JDK 21
+- Maven
+- Docker (para orquestrar componentes externos)
+
+Além disso, sua missão integrará dois microserviços que se comunicarão por meio de um message broker, utilizando o ActiveMQ via Docker Compose.
+
+*Capítulo 2: A Força do Dragão Docker Compose*
+*Subtítulo: Configurando o ActiveMQ para a Comunicação Mística*
+
+Para que a comunicação entre nossos microserviços ocorra com precisão, vamos utilizar o Docker Compose para lançar o ActiveMQ, nosso message broker lendário. Crie um arquivo chamado docker-compose.yml com o seguinte conteúdo:
+
+```yaml
+version: '3'
+services:
+  activemq:
+    image: rmohr/activemq:latest
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+```
+
+Este arquivo configura o ActiveMQ para escutar na porta 61616 (para mensagens) e 8161 (para interface administrativa). Assim, nosso clã de microserviços terá um canal seguro para trocar informações.
+
+
+*Capítulo 3: Forjando o Arsenal do Guerreiro*
+*Subtítulo: Criando Projetos Maven e Configurando o pom.xml*
+
+Para equipar cada microserviço, crie dois projetos Maven independentes. No arquivo pom.xml de cada projeto, adicione as seguintes configurações mínimas:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.guerreiro.java</groupId>
+  <artifactId>microservico-a-ou-b</artifactId>
+  <version>1.0.0</version>
+  <properties>
+    <java.version>21</java.version>
+    <spring-boot.version>3.5.0</spring-boot.version>
+    <camel.version>4.10.0</camel.version>
+  </properties>
+  <dependencies>
+    <!-- Spring Boot Starter -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <!-- Apache Camel com Spring Boot -->
+    <dependency>
+      <groupId>org.apache.camel.springboot</groupId>
+      <artifactId>camel-spring-boot-starter</artifactId>
+      <version>${camel.version}</version>
+    </dependency>
+    <!-- Dependência para integração com ActiveMQ -->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-camel</artifactId>
+      <version>5.16.4</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <!-- Plugin do Spring Boot -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+Esse pom.xml equipará seus projetos com os recursos necessários para criar e gerenciar rotas com Apache Camel, além de integrar o ActiveMQ e rodar com Spring Boot.
+
+*Capítulo 4: Missão Secreta do Microserviço A*
+*Subtítulo: Decifrando a Mensagem e Enviando Sinais para a Guerra*
+
+O Microserviço A é o mensageiro secreto responsável por ler missivas guardadas na pasta c:/carta-recebida. Sua missão é:
+
+Verificar se a primeira linha contém a frase secreta correta.
+
+Extrair os e-mails da segunda linha (separados por ;).
+
+Obter o assunto da terceira linha.
+
+Ler o restante do arquivo para compor a mensagem.
+
+Para cada e-mail extraído, enviar uma mensagem formatada à fila mensagems_para_enviar do ActiveMQ.
+
+Segue um exemplo de rota com Apache Camel:
+
+```java
+package com.guerreiro.java.microservicoa;
+
+import org.apache.camel.builder.RouteBuilder;
+import org.springframework.stereotype.Component;
+
+@Component
+public class RouteMicroservicoA extends RouteBuilder {
+    @Override
+    public void configure() throws Exception {
+        from("file://c:/carta-recebida?noop=true")
+            .process(exchange -> {
+                String conteudo = exchange.getIn().getBody(String.class);
+                String[] linhas = conteudo.split("\\r?\\n");
+                
+                if (linhas.length < 4 || !linhas[0].trim().equals("SENHA-SECRETA")) {
+                    throw new Exception("Arquivo inválido ou senha incorreta!");
+                }
+                
+                String[] emails = linhas[1].split(";");
+                String assunto = linhas[2];
+                StringBuilder mensagemBuilder = new StringBuilder();
+                for (int i = 3; i < linhas.length; i++) {
+                    mensagemBuilder.append(linhas[i]).append("\n");
+                }
+                String mensagem = mensagemBuilder.toString();
+                
+                for (String email : emails) {
+                    String mensagemFormatada = String.format("TO:%s;SUBJECT:%s;MESSAGE:%s", email.trim(), assunto, mensagem);
+                    exchange.getContext()
+                            .createProducerTemplate()
+                            .sendBody("activemq:queue:mensagems_para_enviar", mensagemFormatada);
+                }
+            })
+            .log("Arquivo processado e mensagens enviadas para a fila.");
+    }
+}
+```
+
+Neste código, o microserviço lê o arquivo, verifica a autenticidade da missão e distribui as mensagens para cada destinatário via ActiveMQ.
+
+*Capítulo 5: O Despertar do Guardião*
+*Subtítulo: Microserviço B - O Vigia da Fila e o Envio do Alerta*
+
+Enquanto o mensageiro A envia as mensagens, o Microserviço B mantém-se alerta, escutando a fila mensagems_para_enviar. Quando uma mensagem chega, ele extrai os dados (e-mail, assunto e mensagem) e simula o disparo de um e-mail para o destinatário. Eis um exemplo prático:
+
+```java
+package com.guerreiro.java.microservicob;
+
+import org.apache.camel.builder.RouteBuilder;
+import org.springframework.stereotype.Component;
+
+@Component
+public class RouteMicroservicoB extends RouteBuilder {
+    @Override
+    public void configure() throws Exception {
+        from("activemq:queue:mensagems_para_enviar")
+            .process(exchange -> {
+                String corpo = exchange.getIn().getBody(String.class);
+                // Formato esperado: "TO:email;SUBJECT:assunto;MESSAGE:mensagem"
+                String[] partes = corpo.split(";");
+                if (partes.length < 3) {
+                    throw new Exception("Mensagem mal formatada.");
+                }
+                String email = partes[0].substring(partes[0].indexOf(":") + 1).trim();
+                String assunto = partes[1].substring(partes[1].indexOf(":") + 1).trim();
+                String mensagem = partes[2].substring(partes[2].indexOf(":") + 1).trim();
+                
+                // Simula o envio do e-mail (substitua por integração com seu serviço de e-mail real)
+                System.out.println("Enviando e-mail para: " + email);
+                System.out.println("Assunto: " + assunto);
+                System.out.println("Mensagem: " + mensagem);
+            })
+            .log("Mensagem recebida e processada para envio do e-mail.");
+    }
+}
+```
+
+Com essa rota, o Microserviço B atua como o guardião da comunicação, pronto para converter as mensagens recebidas em ações que alertam os destinatários.
+
+*Capítulo 6: União de Forças – O Despertar Final*
+*Subtítulo: Integrando Sabedoria e Tecnologia para Vencer a Batalha Digital*
+
+Nesta aventura, dois microserviços – o mensageiro secreto (Microserviço A) e o vigilante (Microserviço B) – unem forças por meio do ActiveMQ e do Apache Camel. Com o Docker Compose orquestrando o cenário e o Maven gerenciando as dependências, você possui agora um exemplo prático e enxuto para criar sistemas integrados e escaláveis.
+
+Use esses exemplos para expandir seu arsenal, testar novas rotas e, quem sabe, personalizar sua jornada na arte dos microserviços. A cada linha de código, você se aproxima do domínio total dessa técnica ninja!
+
+Esta aventura prática proporciona os passos mínimos para que você possa replicar e expandir o projeto. Se desejar aprofundar em testes, configurações avançadas ou integração com serviços reais de envio de e-mails, sua próxima missão já está lançada
+
+</details>
+
 
 [DIO]: https://www.dio.me/sign-up?ref=WQ0TRWQ8E1 
 [TONNIE - Java and AI in Europe]: https://www.dio.me/bootcamp/tonnie-java-and-ai-europe?ref=WQ0TRWQ8E1
+
+[Microsoft Copilot Chat]: https://copilot.microsoft.com/
+[Carbon]: https://carbon.now.sh/
