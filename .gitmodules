@@ -1,0 +1,3 @@
+[submodule "ebook-com-ia-apache-camel-example"]
+	path = ebook-com-ia-apache-camel-example
+	url = https://github.com/didifive/ebook-com-ia-apache-camel-example.git
