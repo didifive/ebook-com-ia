@@ -18,7 +18,7 @@ Criar um ebook utilizando tecnologias de IAs para acelerar o desenvolvimento e c
 - 📊 **Download do Ebook editável pelo PowerPoint:** [Clique aqui para baixar o arquivo do PowerPoint](./ebook-O-Despertar-do-Guerreiro-Java.pptx)
 - 🧑‍💻 **Repositório de Exemplo:** Este projeto inclui como submódulo o repositório de exemplo prático com código-fonte dos microsserviços:  
   [didifive/ebook-com-ia-apache-camel-example](https://github.com/didifive/ebook-com-ia-apache-camel-example)
-- 🌐 **Publicação no LinkedIn** (aproveite para reagir, comentar e conectar): [Criando um Ebook com IAs]()
+- 🌐 **Publicação no LinkedIn** (aproveite para reagir, comentar e conectar): [Criando um Ebook com IAs](https://www.linkedin.com/posts/luis-zancanela_ebook-o-despertar-do-guerreiro-java-activity-7337951881333256193-kBKw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAgnIO4Bu9w3UNiwLPGYMpS11D9D3lcS0JQ)
 
 ---
 ---
