@@ -49,14 +49,15 @@ Após a elaboração do conteúdo, foi realizada uma revisão detalhada para gar
 - **Microsoft Copilot Chat** - Geração de conteúdo e ideação
 - **Gemini Nano Banana 2** - Geração de arte para capa
 - **Microsoft PowerPoint com Copilot** - Design e layout do ebook
-- **[Carbon](https://carbon.now.sh/)** - Renderização de código com estilo visual (a ser utilizado)
+- **[Carbon](https://carbon.now.sh/)** - Renderização de código com estilo visual
 
 ## ♿ Acessibilidade
 
-O ebook foi desenvolvido com foco em acessibilidade. Na exportação para PDF, utilizam-se os recursos nativos do PowerPoint para garantir que o documento exportado seja acessível, incluindo:
-- Estrutura de tags adequada
-- Texto alternativo para imagens
-- Contraste sufficiente entre elementos
+No PowerPoint, foram configurados recursos de acessibilidade no arquivo editável, incluindo:
+- Links no sumário
+- Títulos dos slides definidos corretamente
+- Imagens marcadas como decorativas ou com texto alternativo
+- Revisão da sequência de leitura dos elementos, slide a slide
 
 
 ---
